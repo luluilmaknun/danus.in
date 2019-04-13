@@ -14,7 +14,7 @@ repositories {
 }
 
 bootJar {
-	mainClassName = "com.danusin.LogInOutApplication"
+	mainClassName = 'com.danusin.LogInOutApplication'
 }
 
 dependencies {
