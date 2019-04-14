@@ -1,0 +1,31 @@
+# GitLab CI configuration for Advanced Programming lab exercises
+# Adapted from: https://gitlab.com/gitlab-org/gitlab-ci.yml/blog/master/Gradle.gitlab-ci.yml
+image: gradle:4.6-jdk8-alpine
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+stages:
+  - build
+  - deploy
+
+Build:
+  stage: build
+  script:
+    - gradle clean build --refresh-dependencies
+
+DeployProduction:
+  image: ruby:2.4
+  stage: deploy
+  before_script:
+    - gem install dpl
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+  when: manual
+  environment:
+    name: production
+    url: $HEROKU_APP_HOST

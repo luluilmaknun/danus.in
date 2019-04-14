@@ -1,3 +1,3 @@
 danus.in
 
-BENTAR ALSA RESET
+TRY COPAS YEY
