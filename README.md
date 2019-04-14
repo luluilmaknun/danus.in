@@ -1,2 +1,3 @@
-# danus.in
+danus.in
 
+BENTAR ALSA RESET
