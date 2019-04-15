@@ -13,6 +13,11 @@ ext.mockito_version = '2.5.4'
 ext.project_group = 'com.danusin'
 ext.project_rootdir = project.rootDir.toString()
 
+jar {
+    baseName = 'gs-serving-web-content'
+    version =  '0.1.0'
+}
+
 // For all projects
 allprojects {
     // Set basic information
