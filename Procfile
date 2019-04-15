@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar log_in_out/build/libs/gs-serving-web-content-0.1.0.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar log_in_out/build/libs/*.jar
