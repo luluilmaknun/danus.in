@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Start-Class: com.danusin.log_in_out.LogInOutApplication
+Main-Class: org.springframework.boot.loader.JarLauncher
+
